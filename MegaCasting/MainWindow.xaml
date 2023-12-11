@@ -12,7 +12,7 @@
             
             <TabControl.Resources>
                 <Style TargetType="{x:Type TabPanel}">
-                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
                 </Style>
             </TabControl.Resources>
             <TabItem Header="Clients" FontSize="50" FontWeight="Bold">
@@ -22,8 +22,8 @@
                         <RowDefinition Height="60"/>
                     </Grid.RowDefinitions>
                 <ListBox FontSize="15"
-                    x:Name="LbxClients">
-
+                         ItemsSource="{Binding Users}"
+                         SelectedItem="{Binding SelectedUser}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid>
@@ -44,10 +44,9 @@
 
                                 <Label Grid.Column="2" Content="Prénom : "/>
                                 <Label Width="150" Grid.Column="3" Foreground="blue" Content="{Binding Firstname}"/>
-                                <Button Padding="10" Margin="0,0,30,0" HorizontalAlignment="Right" Grid.Column="4" Background="#FFD800">Détails</Button>
-                                <Button Padding="10" Margin="0,0,30,0" HorizontalAlignment="Right" Grid.Column="5" Background="#FFD800">Modifier</Button>
-                                <Button Padding="10" HorizontalAlignment="Right" Grid.Column="6" Background="Red">Supprimer</Button>
-
+                                <Button x:Name="InfosButton" Padding="10" Margin="0,0,30,0" HorizontalAlignment="Right" Grid.Column="4" Background="#FFD800" Click="InfosButton_Click" >Détails</Button>
+                                <Button x:Name="UpdateButton" Padding="10" Margin="0,0,30,0" HorizontalAlignment="Right" Grid.Column="5" Background="#FFD800" Click="UpdateButton_Click" >Modifier</Button>
+                                <Button x:Name="DeleteButton" Padding="10" HorizontalAlignment="Right" Grid.Column="6" Background="Red" Click="DeleteButton_Click"  >Supprimer</Button>
 
 
                             </Grid>
@@ -55,9 +54,8 @@
                         </DataTemplate>
 
                     </ListBox.ItemTemplate>
-
                 </ListBox>
-                <Button Grid.Row="1" Padding="10" HorizontalAlignment="Center" Height="50" FontSize="15" Background="#FFD800">Ajouter</Button>
+                    <Button x:Name="AddButton" Grid.Row="1" Padding="10" HorizontalAlignment="Center" Height="50" FontSize="15" Background="#FFD800" Click="AddButton_Click">Ajouter</Button>
                 </Grid>
             </TabItem>
             <TabItem Header="Partenaires" FontSize="50" FontWeight="Bold">
