@@ -45,7 +45,7 @@ namespace MegaCasting
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-            UpdateUser window = new UpdateUser();
+            UpdateUser window = new UpdateUser((((Grid)((Button)sender).Parent).DataContext as User).Id);
             window.ShowDialog();
 
             ((MainWindowViewModel)this.DataContext).Refresh();

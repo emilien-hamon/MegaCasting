@@ -1,4 +1,5 @@
 ﻿using MegaCasting.Class;
+using Org.BouncyCastle.Tls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,37 +19,25 @@ namespace MegaCasting.ViewModel
 
 
 
-        public UpdateUserViewModel()
+        public UpdateUserViewModel(int identifierUser)
         {
             using (DbMegacastingContext context = new())
             {
-                User = (User);
+                User = context.Users.First(userTemp  => userTemp.Id == identifierUser);
             }
         }
 
 
-        internal void Upadate()
+        internal void Update()
         {
             using (DbMegacastingContext context = new())
             {
-                if (string.IsNullOrWhiteSpace(User.Email))
-                {
+                if (!(string.IsNullOrWhiteSpace(User.Email)
+                   || string.IsNullOrWhiteSpace(User.Lastname)
+                   || string.IsNullOrWhiteSpace(User.Firstname)
+                   || string.IsNullOrWhiteSpace(User.Password)
+                   || (User.BirhDate == null))) {
 
-                }
-                else if (string.IsNullOrWhiteSpace(User.Lastname))
-                {
-
-                }
-                else if (string.IsNullOrWhiteSpace(User.Firstname))
-                {
-
-                }
-                else if (string.IsNullOrWhiteSpace(User.Password))
-                {
-
-                }
-                else
-                {
                     context.Update(User);
                     context.SaveChanges();
                 }

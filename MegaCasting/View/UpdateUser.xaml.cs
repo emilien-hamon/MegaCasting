@@ -1,4 +1,5 @@
-﻿using MegaCasting.ViewModel;
+﻿using MegaCasting.Class;
+using MegaCasting.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,15 +21,15 @@ namespace MegaCasting.View
     /// </summary>
     public partial class UpdateUser : Window
     {
-        public UpdateUser()
+        public UpdateUser(int identifierUser)
         {
             InitializeComponent();
-            this.DataContext = new AddUserViewModel();
+            this.DataContext = new UpdateUserViewModel(identifierUser);
         }
 
         private void UpdateUserButton_Click(object sender, RoutedEventArgs e)
         {
-            ((AddUserViewModel)this.DataContext).Add();
+            ((UpdateUserViewModel)this.DataContext).Update();
             this.Close();
         }
     }

@@ -36,12 +36,12 @@
         <TextBox    Text="{Binding User.Firstname}"       Grid.Row="2" Grid.Column="2"  Margin="10" Padding="5"/>
         <TextBox    Text="{Binding User.Email}"           Grid.Row="3" Grid.Column="2"  Margin="10" Padding="5"/>
         <TextBox    Text="{Binding User.Password}"        Grid.Row="4" Grid.Column="2"  Margin="10" Padding="5"/>
-        <DatePicker Text="{Binding User.BirhDate}"        Grid.Row="5" Grid.Column="2"  Margin="10" Padding="5"/>
+        <DatePicker SelectedDate="{Binding User.BirhDate}"        Grid.Row="5" Grid.Column="2"  Margin="10" Padding="5"/>
 
 
 
 
-        <Button x:Name="UpdateUserButton" Grid.Column="2" Grid.Row="6" Click="UpdateUserButton" Content="Ajouter"/>
+        <Button x:Name="UpdateUserButton" Grid.Column="2" Grid.Row="6" Click="UpdateUserButton_Click" Content="Ajouter"/>
 
 
 
