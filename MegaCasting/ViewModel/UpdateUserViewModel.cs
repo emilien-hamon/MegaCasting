@@ -1,16 +1,13 @@
 ﻿using MegaCasting.Class;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 
 namespace MegaCasting.ViewModel
 {
-    class AddUserViewModel
+    class UpdateUserViewModel
     {
 
 
@@ -21,35 +18,38 @@ namespace MegaCasting.ViewModel
 
 
 
-        public AddUserViewModel()
+        public UpdateUserViewModel()
         {
-            User = new User();
+            using (DbMegacastingContext context = new())
+            {
+                User = (User);
+            }
         }
 
 
-        internal void Add()
+        internal void Upadate()
         {
             using (DbMegacastingContext context = new())
             {
                 if (string.IsNullOrWhiteSpace(User.Email))
                 {
-                    
+
                 }
                 else if (string.IsNullOrWhiteSpace(User.Lastname))
                 {
-                    
+
                 }
                 else if (string.IsNullOrWhiteSpace(User.Firstname))
                 {
-                    
+
                 }
                 else if (string.IsNullOrWhiteSpace(User.Password))
                 {
-                    
+
                 }
                 else
                 {
-                    context.Add(User);
+                    context.Update(User);
                     context.SaveChanges();
                 }
             }
