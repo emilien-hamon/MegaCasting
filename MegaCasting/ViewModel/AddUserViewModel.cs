@@ -31,24 +31,13 @@ namespace MegaCasting.ViewModel
         {
             using (DbMegacastingContext context = new())
             {
-                if (string.IsNullOrWhiteSpace(User.Email))
+                if (!(string.IsNullOrWhiteSpace(User.Email)
+                   || string.IsNullOrWhiteSpace(User.Lastname)
+                   || string.IsNullOrWhiteSpace(User.Firstname)
+                   || string.IsNullOrWhiteSpace(User.Password)
+                   ))
                 {
-                    
-                }
-                else if (string.IsNullOrWhiteSpace(User.Lastname))
-                {
-                    
-                }
-                else if (string.IsNullOrWhiteSpace(User.Firstname))
-                {
-                    
-                }
-                else if (string.IsNullOrWhiteSpace(User.Password))
-                {
-                    
-                }
-                else
-                {
+
                     context.Add(User);
                     context.SaveChanges();
                 }

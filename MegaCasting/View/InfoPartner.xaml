@@ -1,0 +1,36 @@
+﻿<Window x:Class="MegaCasting.View.InfoPartner"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MegaCasting.View"
+        mc:Ignorable="d"
+        Title="InfoPartner" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="1" Grid.Row="1"  Content="Label : " HorizontalContentAlignment="Right" VerticalContentAlignment="Center"></Label>
+        <Label Grid.Column="1" Grid.Row="2"  Content="Numéro de Siret : " HorizontalContentAlignment="Right" VerticalContentAlignment="Center"></Label>
+        <Label Grid.Column="1" Grid.Row="3"  Content="Description : " HorizontalContentAlignment="Right" VerticalContentAlignment="Center"></Label>
+        <Label Grid.Column="1" Grid.Row="4"  Content="DatTime : " HorizontalContentAlignment="Right" VerticalContentAlignment="Center"></Label>
+
+
+        <TextBlock  Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Partner.Label}" />
+        <TextBlock  Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Partner.SIRET}" />
+        <TextBlock  Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Partner.Description}" />
+        <DatePicker Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" SelectedDate="{Binding Partner.DateTime}"  IsEnabled="False"/>
+    </Grid>
+</Window>

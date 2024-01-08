@@ -36,7 +36,7 @@ namespace MegaCasting.ViewModel
                    || string.IsNullOrWhiteSpace(User.Lastname)
                    || string.IsNullOrWhiteSpace(User.Firstname)
                    || string.IsNullOrWhiteSpace(User.Password)
-                   || (User.BirhDate == null))) {
+                   )) {
 
                     context.Update(User);
                     context.SaveChanges();
