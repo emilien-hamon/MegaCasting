@@ -34,7 +34,7 @@ namespace MegaCasting.ViewModel
             {
                 if (!(string.IsNullOrWhiteSpace(Partner.Label)
                    || string.IsNullOrWhiteSpace(Partner.SIRET)
-                   || string.IsNullOrWhiteSpace(Partner.Description)
+                   || string.IsNullOrWhiteSpace(Partner.Description)))
                 {
                     context.Update(Partner);
                     context.SaveChanges();

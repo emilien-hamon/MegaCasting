@@ -18,13 +18,13 @@ namespace MegaCasting.View
     /// <summary>
     /// Logique d'interaction pour InfoPartner.xaml
     /// </summary>
-    public partial class InfoPartner : Window
+    public partial class InfoAnnouce : Window
     {
 
-        public InfoPartner(int identifierPartner)
+        public InfoAnnouce(int identifierAnnouce)
         {
             InitializeComponent();
-            this.DataContext = new InfoPartnerViewModel(identifierPartner);
+            this.DataContext = new InfoAnnouceViewModel(identifierAnnouce);
         }
     }
 }

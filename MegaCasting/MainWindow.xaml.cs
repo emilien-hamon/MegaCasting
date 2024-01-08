@@ -109,7 +109,7 @@ namespace MegaCasting
         }
         // Annouce
 
-        private void AddPartnerButton_Click(object sender, RoutedEventArgs e)
+        private void AddAnnouceButton_Click(object sender, RoutedEventArgs e)
         {
             AddAnnouce window = new AddAnnouce();
             window.ShowDialog();
