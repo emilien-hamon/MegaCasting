@@ -23,7 +23,7 @@ namespace MegaCasting.ViewModel
 
 
         private ObservableCollection<Annouce> _Annouces;
-        private Partner? _SelectedAnnouce;
+        private Annouce? _SelectedAnnouce;
 
         #endregion
 
@@ -39,7 +39,7 @@ namespace MegaCasting.ViewModel
 
         public ObservableCollection<Annouce> Annouces { get => _Annouces; set => _Annouces = value; }
 
-        public Partner? SelectedAnnouce { get => _SelectedAnnouce; set => _SelectedAnnouce = value; }
+        public Annouce? SelectedAnnouce { get => _SelectedAnnouce; set => _SelectedAnnouce = value; }
 
         #endregion
 

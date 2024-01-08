@@ -18,7 +18,7 @@ namespace MegaCasting.ViewModel
         {
             using (DbMegacastingContext context = new())
             {
-                Annouce = context.Annouces.First(partner => partner.ID == identifierAnnouce);
+                Annouce = context.Annouces.First(annouce => annouce.ID == identifierAnnouce);
             }
         }
     }

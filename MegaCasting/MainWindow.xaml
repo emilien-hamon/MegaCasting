@@ -109,7 +109,7 @@
                         <RowDefinition Height="60"/>
                     </Grid.RowDefinitions>
                     <ListBox FontSize="15"
-ItemsSource="{Binding Annouce}"
+ItemsSource="{Binding Annouces}"
 SelectedItem="{Binding SelectedAnnouce}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
@@ -127,10 +127,10 @@ SelectedItem="{Binding SelectedAnnouce}">
 
                                     <Label Grid.Column="0" Content="Label : "/>
 
-                                    <Label Width="150" Grid.Column="1" Foreground="blue" Content="{Binding Label}"/>
+                                    <Label Width="150" Grid.Column="1" Foreground="blue" Content="{Binding Title}"/>
 
                                     <Label Grid.Column="2" Content="SIRET : "/>
-                                    <Label Width="150" Grid.Column="3" Foreground="blue" Content="{Binding SIRET}"/>
+                                    <Label Width="150" Grid.Column="3" Foreground="blue" Content="{Binding Content}"/>
 
                                     <Button x:Name="InfosAnnouceButton" Padding="10" Margin="0,0,30,0" HorizontalAlignment="Right" Grid.Column="4" Background="#FFD800" Click="InfosAnnouceButton_Click" >Détails</Button>
                                     <Button x:Name="UpdateAnnouceButton" Padding="10" Margin="0,0,30,0" HorizontalAlignment="Right" Grid.Column="5" Background="#FFD800" Click="UpdateAnnouceButton_Click" >Modifier</Button>

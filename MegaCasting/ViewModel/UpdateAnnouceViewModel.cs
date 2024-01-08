@@ -23,7 +23,7 @@ namespace MegaCasting.ViewModel
         {
             using (DbMegacastingContext context = new())
             {
-                Annouce = context.Annouces.First(AnnouceTemp => AnnouceTemp.ID == identifierAnnouce);
+                Annouce = context.Annouces.First(annouceTemp => annouceTemp.ID == identifierAnnouce);
             }
         }
 
