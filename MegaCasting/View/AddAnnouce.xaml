@@ -27,8 +27,8 @@
 
 
 
-        <TextBox    Text="{Binding Partner.Title}"        Grid.Row="1" Grid.Column="2"  Margin="10" Padding="5"/>
-        <TextBox    Text="{Binding Partner.Content}"       Grid.Row="2" Grid.Column="2"  Margin="10" Padding="5"/>
+        <TextBox    Text="{Binding Annouce.Title}"        Grid.Row="1" Grid.Column="2"  Margin="10" Padding="5"/>
+        <TextBox    Text="{Binding Annouce.Content}"       Grid.Row="2" Grid.Column="2"  Margin="10" Padding="5"/>
 
 
 
