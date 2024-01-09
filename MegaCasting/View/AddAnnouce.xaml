@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MegaCasting.View"
         mc:Ignorable="d"
-        Title="AddPartner" Height="320" Width="400">
+        Title="AddAnnouce" Height="320" Width="400">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -32,7 +32,7 @@
 
 
 
-        <Button x:Name="AddPartnerButton" Grid.Column="1" Grid.Row="6" Click="AddPartnerButton_Click" Content="Ajouter"/>
+        <Button x:Name="AddAnnouceButton" Grid.Column="1" Grid.Row="6" Click="AddAnnouceButton_Click" Content="Ajouter"/>
 
 
 
