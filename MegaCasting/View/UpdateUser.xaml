@@ -45,6 +45,6 @@
         <DatePicker SelectedDate="{Binding User.BirhDate}" Grid.Row="5" Grid.Column="2" Margin="10" Padding="5"/>
 
         <!-- Bouton de validation -->
-        <Button x:Name="UpdateUserButton" Grid.Column="2" Grid.Row="6" Click="UpdateUserButton_Click" Content="Ajouter"/>
+        <Button x:Name="UpdateUserButton" Grid.Column="2" Grid.Row="6" Click="UpdateUserButton_Click" Content="Valider"/>
     </Grid>
 </Window>
