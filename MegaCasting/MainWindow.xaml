@@ -1,72 +1,82 @@
-﻿<Window x:Class="MegaCasting.MainWindow"
+﻿<!-- Définition de la fenêtre principale -->
+<Window x:Class="MegaCasting.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:local="clr-namespace:MegaCasting"
         mc:Ignorable="d" 
-        Title="Mega Casting" Height="450" Width="800"> 
+        Title="Mega Casting" Height="450" Width="800">
     <Grid Background="#318CE7">
-    
-        <TabControl Grid.Row="1" >
-            
+
+        <!-- Zone de travail avec onglets -->
+        <TabControl Grid.Row="1">
+
+            <!-- Style de l'onglet -->
             <TabControl.Resources>
                 <Style TargetType="{x:Type TabPanel}">
                     <Setter Property="HorizontalAlignment" Value="Center"/>
                 </Style>
             </TabControl.Resources>
+
+            <!-- Onglet "Clients" -->
             <TabItem Header="Clients" FontSize="50" FontWeight="Bold">
-            <Grid>
+                <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="270"/>
                         <RowDefinition Height="60"/>
                     </Grid.RowDefinitions>
-                <ListBox FontSize="15"
-                         ItemsSource="{Binding Users}"
-                         SelectedItem="{Binding SelectedUser}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
 
-                                <Label Grid.Column="0" Content="Nom : "/>
+                    <!-- Liste des utilisateurs -->
+                    <ListBox FontSize="15"
+                             ItemsSource="{Binding Users}"
+                             SelectedItem="{Binding SelectedUser}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
 
-                                <Label Width="150" Grid.Column="1" Foreground="blue" Content="{Binding Lastname}"/>
+                                    <!-- Libellés des champs -->
+                                    <Label Grid.Column="0" Content="Nom : "/>
+                                    <Label Width="150" Grid.Column="1" Foreground="blue" Content="{Binding Lastname}"/>
+                                    <Label Grid.Column="2" Content="Prénom : "/>
+                                    <Label Width="150" Grid.Column="3" Foreground="blue" Content="{Binding Firstname}"/>
 
-                                <Label Grid.Column="2" Content="Prénom : "/>
-                                <Label Width="150" Grid.Column="3" Foreground="blue" Content="{Binding Firstname}"/>
-                                <Button x:Name="InfosUserButton" Padding="10" Margin="0,0,30,0" HorizontalAlignment="Right" Grid.Column="4" Background="#FFD800" Click="InfosUserButton_Click" >Détails</Button>
-                                <Button x:Name="UpdateUserButton" Padding="10" Margin="0,0,30,0" HorizontalAlignment="Right" Grid.Column="5" Background="#FFD800" Click="UpdateUserButton_Click" >Modifier</Button>
-                                <Button x:Name="DeleteUserButton" Padding="10" HorizontalAlignment="Right" Grid.Column="6" Background="Red" Click="DeleteUserButton_Click"  >Supprimer</Button>
+                                    <!-- Boutons d'actions -->
+                                    <Button x:Name="InfosUserButton" Padding="10" Margin="0,0,30,0" HorizontalAlignment="Right" Grid.Column="4" Background="#FFD800" Click="InfosUserButton_Click" >Détails</Button>
+                                    <Button x:Name="UpdateUserButton" Padding="10" Margin="0,0,30,0" HorizontalAlignment="Right" Grid.Column="5" Background="#FFD800" Click="UpdateUserButton_Click" >Modifier</Button>
+                                    <Button x:Name="DeleteUserButton" Padding="10" HorizontalAlignment="Right" Grid.Column="6" Background="Red" Click="DeleteUserButton_Click"  >Supprimer</Button>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
 
-
-                            </Grid>
-
-                        </DataTemplate>
-
-                    </ListBox.ItemTemplate>
-                </ListBox>
+                    <!-- Bouton d'ajout d'utilisateur -->
                     <Button x:Name="AddUserButton" Grid.Row="1" Padding="10" HorizontalAlignment="Center" Height="50" FontSize="15" Background="#FFD800" Click="AddUserButton_Click">Ajouter</Button>
                 </Grid>
             </TabItem>
+
+            <!-- Onglet "Partenaires" -->
             <TabItem Header="Partenaires" FontSize="50" FontWeight="Bold">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="270"/>
                         <RowDefinition Height="60"/>
                     </Grid.RowDefinitions>
+
+                    <!-- Liste des partenaires -->
                     <ListBox FontSize="15"
-             ItemsSource="{Binding Partners}"
-             SelectedItem="{Binding SelectedPartner}">
+                             ItemsSource="{Binding Partners}"
+                             SelectedItem="{Binding SelectedPartner}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -81,36 +91,38 @@
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
 
+                                    <!-- Libellés des champs -->
                                     <Label Grid.Column="0" Content="Label : "/>
-
                                     <Label Width="150" Grid.Column="1" Foreground="blue" Content="{Binding Label}"/>
-
                                     <Label Grid.Column="2" Content="SIRET : "/>
                                     <Label Width="150" Grid.Column="3" Foreground="blue" Content="{Binding SIRET}"/>
-                                    
+
+                                    <!-- Boutons d'actions -->
                                     <Button x:Name="InfosPartnerButton" Padding="10" Margin="0,0,30,0" HorizontalAlignment="Right" Grid.Column="4" Background="#FFD800" Click="InfosPartnerButton_Click" >Détails</Button>
                                     <Button x:Name="UpdatePartnerButton" Padding="10" Margin="0,0,30,0" HorizontalAlignment="Right" Grid.Column="5" Background="#FFD800" Click="UpdatePartnerButton_Click" >Modifier</Button>
                                     <Button x:Name="DeletePartnerButton" Padding="10" HorizontalAlignment="Right" Grid.Column="6" Background="Red" Click="DeletePartnerButton_Click"  >Supprimer</Button>
-
-
                                 </Grid>
-
                             </DataTemplate>
-
                         </ListBox.ItemTemplate>
                     </ListBox>
+
+                    <!-- Bouton d'ajout de partenaire -->
                     <Button x:Name="AddPartnerButton" Grid.Row="1" Padding="10" HorizontalAlignment="Center" Height="50" FontSize="15" Background="#FFD800" Click="AddPartnerButton_Click">Ajouter</Button>
                 </Grid>
             </TabItem>
+
+            <!-- Onglet "Offres" -->
             <TabItem Header="Offres" FontSize="50" FontWeight="Bold">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="270"/>
                         <RowDefinition Height="60"/>
                     </Grid.RowDefinitions>
+
+                    <!-- Liste des annonces -->
                     <ListBox FontSize="15"
-ItemsSource="{Binding Annouces}"
-SelectedItem="{Binding SelectedAnnouce}">
+                             ItemsSource="{Binding Annouces}"
+                             SelectedItem="{Binding SelectedAnnouce}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -125,29 +137,25 @@ SelectedItem="{Binding SelectedAnnouce}">
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
 
+                                    <!-- Libellés des champs -->
                                     <Label Grid.Column="0" Content="Label : "/>
-
                                     <Label Width="150" Grid.Column="1" Foreground="blue" Content="{Binding Title}"/>
-
-                                    <Label Grid.Column="2" Content="SIRET : "/>
+                                    <Label Grid.Column="2" Content="Contenu : "/>
                                     <Label Width="150" Grid.Column="3" Foreground="blue" Content="{Binding Content}"/>
 
+                                    <!-- Boutons d'actions -->
                                     <Button x:Name="InfosAnnouceButton" Padding="10" Margin="0,0,30,0" HorizontalAlignment="Right" Grid.Column="4" Background="#FFD800" Click="InfosAnnouceButton_Click" >Détails</Button>
                                     <Button x:Name="UpdateAnnouceButton" Padding="10" Margin="0,0,30,0" HorizontalAlignment="Right" Grid.Column="5" Background="#FFD800" Click="UpdateAnnouceButton_Click" >Modifier</Button>
                                     <Button x:Name="DeleteAnnouceButton" Padding="10" HorizontalAlignment="Right" Grid.Column="6" Background="Red" Click="DeleteAnnouceButton_Click"  >Supprimer</Button>
-
-
                                 </Grid>
-
                             </DataTemplate>
-
                         </ListBox.ItemTemplate>
                     </ListBox>
+
+                    <!-- Bouton d'ajout d'annonce -->
                     <Button x:Name="AddAnnouceButton" Grid.Row="1" Padding="10" HorizontalAlignment="Center" Height="50" FontSize="15" Background="#FFD800" Click="AddAnnouceButton_Click">Ajouter</Button>
                 </Grid>
             </TabItem>
-            
         </TabControl>
-        
     </Grid>
 </Window>

@@ -6,13 +6,17 @@
         xmlns:local="clr-namespace:MegaCasting.View"
         mc:Ignorable="d"
         Title="AddAnnouce" Height="320" Width="400">
+
     <Grid>
+        <!-- Définition des colonnes de la grille -->
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
+
+        <!-- Définition des lignes de la grille -->
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
@@ -22,19 +26,19 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Margin="12" Text="Titre"                   Grid.Row="1" Grid.Column="1" />
-        <TextBlock Margin="12" Text="Contenue"                Grid.Row="2" Grid.Column="1" />
+        <!-- Texte pour chaque champ de saisie -->
+        <TextBlock Margin="12" Text="Titre" Grid.Row="1" Grid.Column="1" />
+        <TextBlock Margin="12" Text="Contenu" Grid.Row="2" Grid.Column="1" />
+        <TextBlock Margin="12" Text="Date de début" Grid.Row="3" Grid.Column="1" />
+        <TextBlock Margin="12" Text="Date de fin" Grid.Row="4" Grid.Column="1" />
 
+        <!-- Champs de saisie à completer pour ajouter une offre -->
+        <TextBox Text="{Binding Annouce.Title}" Grid.Row="1" Grid.Column="2" Margin="10" Padding="5"/>
+        <TextBox Text="{Binding Annouce.Content}" Grid.Row="2" Grid.Column="2" Margin="10" Padding="5"/>
+        <DatePicker SelectedDate="{Binding Annouce.StartDate}" Grid.Row="3" Grid.Column="2" Margin="10" Padding="5"/>
+        <DatePicker SelectedDate="{Binding Annouce.EndDate}" Grid.Row="4" Grid.Column="2" Margin="10" Padding="5"/>
 
-
-        <TextBox    Text="{Binding Annouce.Title}"        Grid.Row="1" Grid.Column="2"  Margin="10" Padding="5"/>
-        <TextBox    Text="{Binding Annouce.Content}"       Grid.Row="2" Grid.Column="2"  Margin="10" Padding="5"/>
-
-
-
+        <!-- Bouton pour valider l'ajout -->
         <Button x:Name="AddAnnouceButton" Grid.Column="1" Grid.Row="6" Click="AddAnnouceButton_Click" Content="Ajouter"/>
-
-
-
     </Grid>
 </Window>

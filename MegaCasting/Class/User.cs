@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MegaCasting.Class;
-
+// Déclaration table User
 public partial class User
 {
     public int Id { get; set; }

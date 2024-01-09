@@ -20,14 +20,13 @@ namespace MegaCasting.View
     /// </summary>
     public partial class InfoUser : Window
     {
-
-
+        // Constructeur de la fenêtre InfoUser prenant un identifiant d'utilisateur en paramètre
         public InfoUser(int identifierUser)
         {
             InitializeComponent();
+
+            // Définir le DataContext de la fenêtre sur une instance de InfoUserViewModel avec l'identifiant fourni
             this.DataContext = new InfoUserViewModel(identifierUser);
         }
-
-
     }
 }

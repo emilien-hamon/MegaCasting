@@ -20,16 +20,23 @@ namespace MegaCasting.View
     /// </summary>
     public partial class UpdatePartner : Window
     {
+        // Constructeur de la fenêtre UpdatePartner
         public UpdatePartner(int identifierPartner)
         {
             InitializeComponent();
+
+            // Définir le DataContext de la fenêtre sur une instance de UpdatePartnerViewModel avec l'identifiant fourni
             this.DataContext = new UpdatePartnerViewModel(identifierPartner);
         }
 
+        // Gestionnaire d'événements pour l'événement click du bouton "UpdatePartnerButton"
         private void UpdatePartnerButton_Click(object sender, RoutedEventArgs e)
         {
+            // Appeler la méthode Update de UpdatePartnerViewModel pour gérer la logique de mise à jour
             ((UpdatePartnerViewModel)this.DataContext).Update();
+
+            // Fermer la fenêtre courante après l'opération de mise à jour
             this.Close();
         }
     }
-} 
+}

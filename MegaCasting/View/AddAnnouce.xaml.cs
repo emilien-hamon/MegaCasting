@@ -20,15 +20,22 @@ namespace MegaCasting.View
     /// </summary>
     public partial class AddAnnouce : Window
     {
+        // Constructeur de la fenêtre AddAnnouce
         public AddAnnouce()
         {
             InitializeComponent();
+
+            // Définir le DataContext de la fenêtre sur une instance de AddAnnouceViewModel
             this.DataContext = new AddAnnouceViewModel();
         }
 
+        // Gestionnaire d'événements pour l'événement click du bouton "AddAnnouceButton"
         private void AddAnnouceButton_Click(object sender, RoutedEventArgs e)
         {
+            // Appeler la méthode Add de AddAnnouceViewModel pour gérer la logique d'ajout
             ((AddAnnouceViewModel)this.DataContext).Add();
+
+            // Fermer la fenêtre courante après l'opération d'ajout
             this.Close();
         }
     }

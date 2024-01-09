@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-
+// Déclaration table Partner
 namespace MegaCasting.Class
 {
     public partial class Partner

@@ -20,15 +20,22 @@ namespace MegaCasting.View
     /// </summary>
     public partial class AddUser : Window
     {
+        // Constructeur de la fenêtre AddUser
         public AddUser()
         {
             InitializeComponent();
+
+            // Définir le DataContext de la fenêtre sur une instance de AddUserViewModel
             this.DataContext = new AddUserViewModel();
         }
 
+        // Gestionnaire d'événements pour l'événement click du bouton "AddUserButton"
         private void AddUserButton_Click(object sender, RoutedEventArgs e)
         {
+            // Appeler la méthode Add de AddUserViewModel pour gérer la logique d'ajout
             ((AddUserViewModel)this.DataContext).Add();
+
+            // Fermer la fenêtre courante après l'opération d'ajout
             this.Close();
         }
     }

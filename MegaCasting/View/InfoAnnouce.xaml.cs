@@ -16,14 +16,16 @@ using System.Windows.Shapes;
 namespace MegaCasting.View
 {
     /// <summary>
-    /// Logique d'interaction pour InfoPartner.xaml
+    /// Logique d'interaction pour InfoAnnouce.xaml
     /// </summary>
     public partial class InfoAnnouce : Window
     {
-
+        // Constructeur de la fenêtre InfoAnnouce
         public InfoAnnouce(int identifierAnnouce)
         {
             InitializeComponent();
+
+            // Définir le DataContext de la fenêtre sur une instance de InfoAnnouceViewModel avec l'identifiant fourni
             this.DataContext = new InfoAnnouceViewModel(identifierAnnouce);
         }
     }

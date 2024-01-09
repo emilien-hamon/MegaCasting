@@ -22,8 +22,13 @@
 
         <Label Grid.Column="1" Grid.Row="1"  Content="Titre : " HorizontalContentAlignment="Right" VerticalContentAlignment="Center"></Label>
         <Label Grid.Column="1" Grid.Row="2"  Content="Contenue : " HorizontalContentAlignment="Right" VerticalContentAlignment="Center"></Label>
+        <Label Grid.Column="1" Grid.Row="3"  Content="Date de début : " HorizontalContentAlignment="Right" VerticalContentAlignment="Center"></Label>
+        <Label Grid.Column="1" Grid.Row="4"  Content="Date de fin : " HorizontalContentAlignment="Right" VerticalContentAlignment="Center"></Label>
+
 
         <TextBlock  Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Annouce.Title}" />
         <TextBlock  Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Annouce.Content}" />
+        <DatePicker Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" SelectedDate="{Binding Annouce.StartDate}"  IsEnabled="False"/>
+        <DatePicker Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" SelectedDate="{Binding Annouce.EndDate}"  IsEnabled="False"/>
     </Grid>
 </Window>

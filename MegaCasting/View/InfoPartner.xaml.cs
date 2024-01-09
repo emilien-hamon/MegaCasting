@@ -20,10 +20,12 @@ namespace MegaCasting.View
     /// </summary>
     public partial class InfoPartner : Window
     {
-
+        // Constructeur de la fenêtre InfoPartner 
         public InfoPartner(int identifierPartner)
         {
             InitializeComponent();
+
+            // Définir le DataContext de la fenêtre sur une instance de InfoPartnerViewModel avec l'identifiant fourni
             this.DataContext = new InfoPartnerViewModel(identifierPartner);
         }
     }
